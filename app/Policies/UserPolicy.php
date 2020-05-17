@@ -17,4 +17,12 @@ class UserPolicy
     {
         return $currentUser->id !== $user->id && $currentUser->is_admin;
     }
+    public function resend(User $currentUser)
+    {
+        return !$currentUser->activated;
+    }
+    public function follow(User $currentUser, User $user)
+    {
+        return $currentUser->id !== $user->id;
+    }
 }

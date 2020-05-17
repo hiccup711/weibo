@@ -17,9 +17,13 @@
     </div>
 @endif
 @if(session()->has('activated'))
-    <div class="alert alert-warning">
-        您的账号还未激活，请查看您的邮箱激活账号 <a href="">重新发送激活邮件</a>
-    </div>
+    <form action="{{ route('resend_email') }}" method="POST" class="alert alert-warning">
+        @csrf
+        <span class="mr-2">
+        您的账号还未激活，请查看您的邮箱激活账号
+        </span>
+        <button type="submit" class="btn p-0">重新发送激活邮件</button>
+    </form>
 @endif
 @include('shared._message')
 @yield('content')

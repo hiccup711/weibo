@@ -43,8 +43,8 @@ class SessionsController extends Controller
     public function destroy()
     {
         Auth::logout();
+        session()->forget('activated');
         session()->flash('success', '您的账号已退出');
-        session()->flush();
         return redirect('/');
     }
 }

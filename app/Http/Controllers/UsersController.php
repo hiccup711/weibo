@@ -44,7 +44,8 @@ class UsersController extends Controller
     }
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $statuses = $user->statuses()->orderBy('created_at', 'desc')->paginate(15);
+        return view('users.show', compact('user', 'statuses'));
     }
     public function edit(User $user)
     {
@@ -81,6 +82,7 @@ class UsersController extends Controller
         $user->save();
         Auth::login($user);
         session()->flash('success', '账号已激活，您将在这里开启一段新的旅程~');
+        session()->forget('activated');
         return redirect()->route('users.show', compact('user'));
     }
     public function sendConfirmEmailTo($user)
@@ -92,5 +94,14 @@ class UsersController extends Controller
         Mail::send($view, $data, function($message) use ($to, $subject){
             $message->to($to)->subject($subject);
         });
+    }
+    public function resendConfirmEmail()
+    {
+        $this->authorize('resend', Auth::user());
+
+        $this->sendConfirmEmailTo(Auth::user());
+        session()->flash('success', '激活邮件已重新发送，请查看您的邮箱');
+        session()->forget('activated');
+        return back();
     }
 }
