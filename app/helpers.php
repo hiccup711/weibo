@@ -2,9 +2,9 @@
 
     function get_db_config()
     {
-        if(getenv('IS_IN_HEROKU'))
+        if(env('IS_IN_HEROKU'))
         {
-            $url = parse_url(getenv('DATABASE_URL'));
+            $url = parse_url(env('DATABASE_URL'));
             return $db_config = [
                 'connection' => 'pgsql',
                 'host' => $url['host'],
@@ -14,11 +14,11 @@
             ];
         }else{
             return $db_config = [
-                'connection' => getenv('DB_CONNECTION', 'mysql'),
-                'host' => getenv('DB_HOST', 'localhost'),
-                'database' => getenv('DB_DATABASE', 'forge'),
-                'username' => getenv('DB_USERNAME', 'forge'),
-                'password' => getenv('DB_PASSWORD', '')
+                'connection' => env('DB_CONNECTION', 'mysql'),
+                'host' => env('DB_HOST', 'localhost'),
+                'database' => env('DB_DATABASE', 'forge'),
+                'username' => env('DB_USERNAME', 'forge'),
+                'password' => env('DB_PASSWORD', '')
             ];
         }
     }
