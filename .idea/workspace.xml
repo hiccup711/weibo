@@ -132,6 +132,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/caouecs/laravel-lang" />
     </include_path>
   </component>
   <component name="ProjectId" id="1c1HARAjDQCBV3QGX1IqMsSXCVA" />
@@ -145,8 +146,15 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/auth/passwords" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Coding\Homestead\Code\weibo\resources\views\auth\passwords" />
+      <recent name="E:\Coding\Homestead\Code\weibo\resources\views\users" />
+      <recent name="E:\Coding\Homestead\Code\weibo\resources\lang" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -164,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589689035849</updated>
-      <workItem from="1589689037620" duration="1674000" />
+      <workItem from="1589689037620" duration="21812000" />
     </task>
     <servers />
   </component>
@@ -176,6 +184,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1589689119013" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589702262527">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1589702262527" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1589707846128">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1589707846128" />
     <state width="1493" height="193" key="GridCell.Tab.0.bottom" timestamp="1589692768283">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -200,5 +216,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="437" y="134" width="803" height="632" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1589692825548" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1589702162262">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1589702162262" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1589705726514">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1589705726514" />
   </component>
 </project>
