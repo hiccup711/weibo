@@ -19,6 +19,7 @@ Route::resource('/users', 'UsersController');
 
 // 激活账号
 Route::get('/users/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
+// 重新发送激活邮件
 Route::post('/users/resend', 'UsersController@resendConfirmEmail')->name('resend_email');
 // 找回密码
 Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

@@ -7,10 +7,12 @@ use App\Models\Status;
 use Illuminate\Support\Facades\Auth;
 class StatusesController extends Controller
 {
+//    只有登录用户可以访问此控制器
     public function __construct()
     {
         $this->middleware('auth');
     }
+//    发布微博
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -22,6 +24,7 @@ class StatusesController extends Controller
         session()->flash('success', '发布成功');
         return back();
     }
+//    删除微博
     public function destroy(Status $status)
     {
         $this->authorize('destroy', $status);

@@ -37227,6 +37227,19 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+$('#resendConfirmEmail').click(function () {
+  resendConfirmEmail();
+});
+
+function resendConfirmEmail() {
+  console.log('test');
+  $.post('/users/resend', {
+    _token: $("input[name='_token']").val()
+  }, function () {
+    location.reload();
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class User extends Authenticatable
@@ -43,6 +44,7 @@ class User extends Authenticatable
         $hash = md5(strtolower(trim($this->email)));
         return "http://www.gravatar.com/avatar/$hash?s=$size";
     }
+//    在用户创建的方法时，向 activation_token 字段添加一个 10位随机字符串作为邮箱验证token
     public static function boot()
     {
         parent::boot();
@@ -54,10 +56,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Status::class);
     }
+//    首页媒体流
     public function feed()
     {
         $user_ids = $this->followings->pluck('id')->toArray();
         array_push($user_ids, $this->id);
+        Status::whereIn('user_id', $user_ids)->orderBy('created_at','desc');
+//        避免N+1查询，使用了 user 方法关联了所有status的user_id数据
         return Status::whereIn('user_id', $user_ids)->with('user')->orderBy('created_at','desc');
     }
     public function followers()
